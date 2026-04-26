@@ -400,7 +400,6 @@ section{position:relative;overflow:hidden}
   position:relative;overflow:hidden;cursor:pointer;border-radius:3px;
   border:1px solid rgba(201,151,58,.06);background:var(--card);
   /* ratio fixe — image entière toujours visible */
-  aspect-ratio:4/5;
   transition:border-color .3s,box-shadow .3s}
 .gal-item:hover{border-color:rgba(201,151,58,.32);box-shadow:0 0 30px rgba(201,151,58,.09)}
 .gal-item::before{content:'';position:absolute;inset:-1px;border-radius:3px;
@@ -416,7 +415,7 @@ section{position:relative;overflow:hidden}
 .gal-ph i{font-size:clamp(1rem,1.6vw,1.6rem);color:var(--gdim);opacity:.32}
 /* image réelle — couvre toute la cellule, visible immédiatement */
 .gal-item img{
-  position:absolute;inset:0;width:100%;height:100%;
+  position:relative;width:100%;height:max-content;
   object-fit:cover;object-position:center;
   loading:lazy;
   transition:transform .6s var(--ease)}
@@ -634,7 +633,6 @@ footer{background:var(--void);border-top:1px solid rgba(201,151,58,.07);
   .song-info{padding:clamp(.6rem,2.5vw,.9rem)}
   /* 1 photo par ligne galerie */
   .gal-grid{grid-template-columns:1fr}
-  .gal-item{aspect-ratio:16/9}
   /* Noms */
   .h-name-line:nth-child(1) .h-name-inner{font-size:clamp(3rem,17vw,4.5rem)}
   .h-name-line:nth-child(2) .h-name-inner{font-size:clamp(1.8rem,7vw,2.8rem)}
