@@ -651,6 +651,39 @@ footer{background:var(--void);border-top:1px solid rgba(201,151,58,.07);
   .songs-grid{grid-template-columns:1fr}
   .gal-grid{grid-template-columns:1fr}
 }
+
+
+/* BOUTON WHATSAPP FLOTTANT */
+#wa-float{
+  position: fixed;
+  bottom: clamp(20px, 4vh, 32px);
+  right: clamp(16px, 3vw, 28px);
+  z-index: 9000;
+  width: clamp(52px, 7vw, 62px);
+  height: clamp(52px, 7vw, 62px);
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.5rem, 3.5vw, 1.9rem);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(37,211,102,.45),
+              0 0 0 0 rgba(37,211,102,.4);
+  animation: waPulse 2.5s ease-in-out infinite;
+  transition: transform .3s var(--ease), box-shadow .3s;
+  cursor: pointer;
+}
+#wa-float:hover{
+  transform: scale(1.12) translateY(-4px);
+  box-shadow: 0 8px 36px rgba(37,211,102,.6),
+              0 0 0 8px rgba(37,211,102,.15);
+}
+@keyframes waPulse{
+  0%  { box-shadow: 0 4px 24px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.4); }
+  60% { box-shadow: 0 4px 24px rgba(37,211,102,.45), 0 0 0 14px rgba(37,211,102,0); }
+  100%{ box-shadow: 0 4px 24px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,0); }
+}
 </style>
 </head>
 <body>
@@ -670,6 +703,14 @@ footer{background:var(--void);border-top:1px solid rgba(201,151,58,.07);
   <div class="ld-sub">Artiste · Tradi-Moderne · Bénin</div>
   <div class="ld-bar"></div>
 </div>
+<!-- BOUTON WHATSAPP FLOTTANT -->
+<a href="https://wa.me/2290158163727?text=Bonjour%20Nic%20de%20Gnanha%2C%20je%20vous%20contacte%20depuis%20votre%20site%20officiel.%20"
+   target="_blank"
+   rel="noopener"
+   id="wa-float"
+   title="Contacter Nic de Gnanha sur WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <!-- MOBILE NAV -->
 <div id="mobnav">
